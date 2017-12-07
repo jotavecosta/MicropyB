@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    
+    <!-- bootstrap js -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
+    
+	  <!-- blocly js -->
+    <script src="../blockly/blockly_compressed.js"></script> <!--alterar caminho quando mudar de pasta -->
+    <!-- Language -->
+    <script src="../blockly/python_compressed.js"></script> <!-- Linguagem para teste da tradução-->
+    <script src="../blockly/blocks_compressed.js"></script> <!--alterar caminho quando mudar de pasta -->
+    <script src="../blockly/msg/js/pt-br.js"></script> <!--alterar caminho quando mudar de pasta -->
+  
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
+  	<!-- micropyb css -->
+    <link rel="stylesheet" href="micropyb.css">
+  
+    <title>MicropyB</title>
+  </head>
+
+  <body>
+  
+    <!-- top menu -->
+	<nav class="navbar navbar-expand-lg navbar-light bg-light">
+	  <a class="navbar-brand" href="#">Icon</a>
+		<span class="navbar-text">MicropyB</span>
+	</nav>
+	<!-- content -->
+  <div class="container-fluid">
+    <div class="row">
+      <!--blockly area-->
+		  <div class="ml-5 mt-4"  id="blocklyArea">
+		    <div class="panel-body" id="blocklyDiv"></div><!-- criar uma div para reservar o lugar da �rea do blockly mudar para o modelo resizable (problemas em criar uma div externa com espa�o reservado) -->
+      </div>
+
+      <!-- source code area-->
+      <div class="card col-3 ml-4 mt-4 bg-light" id="codebox">
+	      <div class="card-title text-center">
+	       <b> <> Código MicroPython</b>
+	      </div>
+	      <div class="card-text bg-light"><pre id="codearea"></pre></div>
+      </div>
+
+    </div>
+  </div>
+    <!--terminal area-->
+    <div id="accordion" role="tablist">
+      <div class="card fixed-bottom">
+        <div class="card-header" role="tab" id="terminalTitle">
+          <button type="button" class="btn ml-4" data-toggle="collapse" data-target="#terminal" aria-expanded="false" aria-controls="terminal">Terminal</button>
+        </div>
+      
+        <div id="terminal" class="collapse" role="tabpanel" aria-labelledby="headingOne" data-parent="#accordion">
+          <div class="card-body">
+            <!--inserir codigo do teminal aqui-->
+          </div>
+        </div>
+      </div>
+    </div>
+  
+	
+	<!-- toolbox -->
+  <xml xmlns="http://www.w3.org/1999/xhtml" id="toolbox" style="display: none;">
+    
+    <category name="Lógicos" colour="#5b5ba5">
+      <block type="controls_if"></block>
+      <block type="logic_compare">
+        <field name="OP">EQ</field>
+      </block>
+      <block type="logic_boolean">
+        <field name="BOOL">TRUE</field>
+      </block>
+      <block type="logic_operation">
+        <field name="OP">AND</field>
+      </block>
+      <block type="logic_negate"></block>
+      <block type="logic_ternary"></block>
+      <block type="logic_null"></block>
+    </category>
+    <category name="Laços" colour="#5ba56d">
+      <block type="controls_repeat_ext">
+        <value name="TIMES">
+          <shadow type="math_number">
+            <field name="NUM">10</field>
+          </shadow>
+        </value>
+      </block>
+      <block type="controls_whileUntil">
+        <field name="MODE">WHILE</field>
+      </block>
+      <block type="controls_for">
+        <field name="VAR" id=")%MsZZt/rSLvaCKBc__4" variabletype="">i</field>
+        <value name="FROM">
+          <shadow type="math_number">
+            <field name="NUM">1</field>
+          </shadow>
+        </value>
+        <value name="TO">
+          <shadow type="math_number">
+            <field name="NUM">10</field>
+          </shadow>
+        </value>
+        <value name="BY">
+          <shadow type="math_number">
+            <field name="NUM">1</field>
+          </shadow>
+        </value>
+      </block>
+      <block type="controls_forEach">
+        <field name="VAR" id="$%.|?p;,Z3u2ZA1;QlTz" variabletype="">j</field>
+      </block>
+      <block type="controls_flow_statements">
+        <field name="FLOW">BREAK</field>
+      </block>
+    </category>
+    <category name="Variáveis" colour="#a55b93">
+      <block type="variables_set">
+        <field name="VAR" id="/,SjS9jxNxvs47Ei**d^" variabletype="">i</field>
+      </block>
+      <block type="math_change">
+        <field name="VAR" id="/,SjS9jxNxvs47Ei**d^" variabletype="">i</field>
+        <value name="DELTA">
+          <shadow type="math_number">
+            <field name="NUM">1</field>
+          </shadow>
+        </value>
+      </block>
+      <block type="variables_get">
+        <field name="VAR" id="/,SjS9jxNxvs47Ei**d^" variabletype="">i</field>
+      </block>
+    </category>
+  </xml>
+  
+  <!-- Injecao dos blocos na area da div -->
+	<script> 
+      var blocklyArea = document.getElementById('blocklyArea');
+      var blocklyDiv = document.getElementById('blocklyDiv');
+	    var workspacePlayground = Blockly.inject(blocklyDiv,
+        {toolbox: document.getElementById('toolbox'),
+		     grid:
+		       {spacing:20,
+				   length:3,
+			     colour: '#ccc', 
+				   snap: true},
+				   trashcan: true});
+      var onresize = function(e) {
+        // Compute the absolute coordinates and dimensions of blocklyArea.
+        var element = blocklyArea;
+        var x = 0;
+        var y = 0;
+        do {
+          x += element.offsetLeft;
+          y += element.offsetTop;
+          element = element.offsetParent;
+        } while (element);
+        // Position blocklyDiv over blocklyArea.
+        blocklyDiv.style.left = x + 'px';
+        blocklyDiv.style.top = y + 'px';
+        blocklyDiv.style.width = blocklyArea.offsetWidth + 'px';
+        blocklyDiv.style.height = blocklyArea.offsetHeight + 'px';
+      };
+      window.addEventListener('resize', onresize, false);
+      onresize();
+      Blockly.svgResize(workspacePlayground);
+
+      //traducao dos blocos para codigo
+      function myUpdateFunction(event) {
+        var code = Blockly.Python.workspaceToCode(workspacePlayground);
+        document.getElementById('codearea').innerHTML = code;
+      }
+      workspacePlayground.addChangeListener(myUpdateFunction);
+
+  </script>
+  </body>
+</html>

@@ -1,0 +1,42 @@
+/*
+ * Bla bla bla
+ */
+body {
+    background-color: #f0eaf3
+}
+
+.navbar{
+    background-color: #9670af !important
+}
+
+#blocklyArea{
+    height: 525px; 
+    width: 900px
+}
+
+#blocklyDiv{
+    position: absolute
+}
+
+.btn{
+    background-color: #784898;
+    color: white
+}
+
+#terminalTitle{
+    background-color: #784898
+}
+
+#terminal{
+    background-color: black;
+    color: white;
+}
+
+.card-title{
+    color: #784898;
+}
+
+#codearea{
+    background-color: #fff;
+    height: 473px
+}
