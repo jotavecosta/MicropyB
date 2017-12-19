@@ -45,6 +45,83 @@ Blockly.Constants.Variables.HUE = 330;
 Blockly.Blocks.variables.HUE = Blockly.Constants.Variables.HUE;
 
 Blockly.defineBlocksWithJsonArray([  // BEGIN JSON EXTRACT
+  //Bloco para ligar o pino
+  {
+    "type": "pin_on",
+    "message0": "Ligar %1 %2",
+    "args0": [
+      {
+        "type": "field_variable",
+        "name": "pin_var",
+        "variable": "item"
+      },
+      {
+        "type": "input_value",
+        "name": "pin_num",
+        "check": "Number",
+        "align": "CENTRE"
+      }
+    ],
+    "inputsInline": true,
+    "previousStatement": null,
+    "nextStatement": null,
+    "colour": 60,
+    "tooltip": "",
+    "helpUrl": ""
+  },
+  // Bloco para desligar o pino
+  {
+    "type": "pin_off",
+    "message0": "Desligar %1 %2",
+    "args0": [
+      {
+        "type": "field_variable",
+        "name": "pin_var",
+        "variable": "item"
+      },
+      {
+        "type": "input_value",
+        "name": "pin_num",
+        "check": "Number",
+        "align": "CENTRE"
+      }
+    ],
+    "inputsInline": true,
+    "previousStatement": null,
+    "nextStatement": null,
+    "colour": 60,
+    "tooltip": "",
+    "helpUrl": ""
+  },
+
+  // Bloco para time sleep
+  {
+    "type": "time_sleep",
+    "message0": "Suspender por %1 Milissegundos",
+    "args0": [
+      {
+        "type": "input_value",
+        "name": "milissegundos",
+        "check": "Number"
+      }
+    ],
+    "previousStatement": null,
+    "nextStatement": null,
+    "colour": 230,
+    "tooltip": "",
+    "helpUrl": ""
+  },
+
+  //bloco para obter tempo atual
+  {
+    "type": "time_counter",
+    "message0": "Tempo atual (ms)",
+    "output": "Number",
+    "colour": 230,
+    "tooltip": "",
+    "helpUrl": ""
+  },
+
   // Block for variable getter.
   {
     "type": "variables_get",

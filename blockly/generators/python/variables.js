@@ -44,3 +44,39 @@ Blockly.Python['variables_set'] = function(block) {
       Blockly.Variables.NAME_TYPE);
   return varName + ' = ' + argument0 + '\n';
 };
+
+Blockly.Python['time_sleep'] = function(block) {
+    var value_milissegundos = Blockly.Python.valueToCode(block, 'milissegundos', Blockly.Python.ORDER_ATOMIC);
+   
+    Blockly.Python.definitions_['import_utime'] = 'import utime';
+    var code = 'utime.sleep_ms('+value_milissegundos+')\n';
+    return code;
+};
+
+Blockly.Python['pin_on'] = function(block) {
+    var variable_pin_var = Blockly.Python.variableDB_.getName(block.getFieldValue('pin_var'), Blockly.Variables.NAME_TYPE);
+    var value_pin_num = Blockly.Python.valueToCode(block, 'pin_num', Blockly.Python.ORDER_ATOMIC);
+    // TODO: Assemble Python into code variable.
+    Blockly.Python.definitions_['from_machine_import_pin'] = 'from machine import pin';
+    Blockly.Python.definitions_['pin_on_declaration'] = variable_pin_var+' = PIN('+value_pin_num+', Pin.OUT)';
+    var code = variable_pin_var+'.on()\n';
+    return code;
+};
+
+Blockly.Python['pin_off'] = function(block) {
+    var variable_pin_var = Blockly.Python.variableDB_.getName(block.getFieldValue('pin_var'), Blockly.Variables.NAME_TYPE);
+    var value_pin_num = Blockly.Python.valueToCode(block, 'pin_num', Blockly.Python.ORDER_ATOMIC);
+    // TODO: Assemble Python into code variable.
+    Blockly.Python.definitions_['from_machine_import_pin'] = 'from machine import pin';
+    Blockly.Python.definitions_['pin_out_declaration'] = variable_pin_var+' = PIN('+value_pin_num+', Pin.OUT)';
+    var code = variable_pin_var+'.off()\n';
+    return code;
+  };
+
+Blockly.Python['pin_out'] = function(block) {
+    var value_pin_num = Blockly.Python.valueToCode(block, 'pin_num', Blockly.Python.ORDER_ATOMIC);
+    // TODO: Assemble Python into code variable.
+    var code = pin_var+' = PIN('+pin_num+', PIN.OUT)\n';
+    // TODO: Change ORDER_NONE to the correct strength.
+    return [code, Blockly.Python.ORDER_NONE];
+};
