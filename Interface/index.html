@@ -67,23 +67,22 @@
 	
 	<!-- toolbox -->
   <xml xmlns="http://www.w3.org/1999/xhtml" id="toolbox" style="display: none;">
-    
     <category name="Lógicos" colour="#5b5ba5">
       <block type="controls_if"></block>
       <block type="logic_compare">
         <field name="OP">EQ</field>
       </block>
-      <block type="logic_boolean">
-        <field name="BOOL">TRUE</field>
-      </block>
       <block type="logic_operation">
         <field name="OP">AND</field>
       </block>
       <block type="logic_negate"></block>
-      <block type="logic_ternary"></block>
+      <block type="logic_boolean">
+        <field name="BOOL">TRUE</field>
+      </block>
       <block type="logic_null"></block>
+      <block type="logic_ternary"></block>
     </category>
-    <category name="Laços" colour="#5ba56d">
+    <category name="Laços" colour="#5ba55b">
       <block type="controls_repeat_ext">
         <value name="TIMES">
           <shadow type="math_number">
@@ -95,7 +94,7 @@
         <field name="MODE">WHILE</field>
       </block>
       <block type="controls_for">
-        <field name="VAR" id=")%MsZZt/rSLvaCKBc__4" variabletype="">i</field>
+        <field name="VAR" id="QKvSvyxcjcE4y@_]RVbh" variabletype="">i</field>
         <value name="FROM">
           <shadow type="math_number">
             <field name="NUM">1</field>
@@ -113,28 +112,74 @@
         </value>
       </block>
       <block type="controls_forEach">
-        <field name="VAR" id="$%.|?p;,Z3u2ZA1;QlTz" variabletype="">j</field>
+        <field name="VAR" id="^@5r^%QM~yl?J[6+gA89" variabletype="">j</field>
       </block>
-      <block type="controls_flow_statements">
+      <block type="controls_flow_statements" disabled="true">
         <field name="FLOW">BREAK</field>
       </block>
     </category>
-    <category name="Variáveis" colour="#a55b93">
-      <block type="variables_set">
-        <field name="VAR" id="/,SjS9jxNxvs47Ei**d^" variabletype="">i</field>
+    <category name="Matematicos" colour="#5ba5a5">
+      <block type="math_number">
+        <field name="NUM">0</field>
       </block>
-      <block type="math_change">
-        <field name="VAR" id="/,SjS9jxNxvs47Ei**d^" variabletype="">i</field>
-        <value name="DELTA">
+      <block type="math_arithmetic">
+        <field name="OP">ADD</field>
+        <value name="A">
+          <shadow type="math_number">
+            <field name="NUM">1</field>
+          </shadow>
+        </value>
+        <value name="B">
           <shadow type="math_number">
             <field name="NUM">1</field>
           </shadow>
         </value>
       </block>
-      <block type="variables_get">
-        <field name="VAR" id="/,SjS9jxNxvs47Ei**d^" variabletype="">i</field>
+      <block type="math_single">
+        <field name="OP">ROOT</field>
+        <value name="NUM">
+          <shadow type="math_number">
+            <field name="NUM">9</field>
+          </shadow>
+        </value>
+      </block>
+      <block type="math_trig">
+        <field name="OP">SIN</field>
+        <value name="NUM">
+          <shadow type="math_number">
+            <field name="NUM">45</field>
+          </shadow>
+        </value>
+      </block>
+      <block type="math_constant">
+        <field name="CONSTANT">PI</field>
+      </block>
+      <block type="math_random_int">
+        <value name="FROM">
+          <shadow type="math_number">
+            <field name="NUM">1</field>
+          </shadow>
+        </value>
+        <value name="TO">
+          <shadow type="math_number">
+            <field name="NUM">100</field>
+          </shadow>
+        </value>
       </block>
     </category>
+    <category name="Pino" colour="#a5a55b">
+      <block type="pin_on">
+        <field name="pin_var" id="leTR,0}`@47oer`~C]zW" variabletype="">item</field>
+      </block>
+      <block type="pin_off">
+        <field name="pin_var" id="leTR,0}`@47oer`~C]zW" variabletype="">item</field>
+      </block>
+    </category>
+    <category name="Tempo" colour="#6d5ba5">
+      <block type="time_sleep"></block>
+      <block type="time_counter"></block>
+    </category>
+    <category name="Variáveis" colour="#A65C81" custom="VARIABLE"></category>
   </xml>
   
   <!-- Injecao dos blocos na area da div -->
