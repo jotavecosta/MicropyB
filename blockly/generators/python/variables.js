@@ -53,30 +53,38 @@ Blockly.Python['time_sleep'] = function(block) {
     return code;
 };
 
-Blockly.Python['pin_on'] = function(block) {
-    var variable_pin_var = Blockly.Python.variableDB_.getName(block.getFieldValue('pin_var'), Blockly.Variables.NAME_TYPE);
-    var value_pin_num = Blockly.Python.valueToCode(block, 'pin_num', Blockly.Python.ORDER_ATOMIC);
+Blockly.Python['pin_declare'] = function(block) {
+    var dropdown_type_pin = block.getFieldValue('type_pin');
+    var value_num_pin = Blockly.Python.valueToCode(block, 'num_pin', Blockly.Python.ORDER_ATOMIC);
     // TODO: Assemble Python into code variable.
     Blockly.Python.definitions_['from_machine_import_pin'] = 'from machine import pin';
-    Blockly.Python.definitions_['pin_on_declaration'] = variable_pin_var+' = PIN('+value_pin_num+', Pin.OUT)';
+    var code = ' PIN('+value_num_pin+', '+'Pin.'+dropdown_type_pin+')\n';
+    // TODO: Change ORDER_NONE to the correct strength.
+    return [code, Blockly.Python.ORDER_NONE];
+  };
+
+Blockly.Python['pin_on'] = function(block) {
+    var variable_pin_var = Blockly.Python.variableDB_.getName(block.getFieldValue('pin_var'), Blockly.Variables.NAME_TYPE);
+    // TODO: Assemble Python into code variable.
     var code = variable_pin_var+'.on()\n';
     return code;
 };
 
 Blockly.Python['pin_off'] = function(block) {
     var variable_pin_var = Blockly.Python.variableDB_.getName(block.getFieldValue('pin_var'), Blockly.Variables.NAME_TYPE);
-    var value_pin_num = Blockly.Python.valueToCode(block, 'pin_num', Blockly.Python.ORDER_ATOMIC);
     // TODO: Assemble Python into code variable.
-    Blockly.Python.definitions_['from_machine_import_pin'] = 'from machine import pin';
-    Blockly.Python.definitions_['pin_out_declaration'] = variable_pin_var+' = PIN('+value_pin_num+', Pin.OUT)';
     var code = variable_pin_var+'.off()\n';
     return code;
   };
 
-Blockly.Python['pin_out'] = function(block) {
-    var value_pin_num = Blockly.Python.valueToCode(block, 'pin_num', Blockly.Python.ORDER_ATOMIC);
+  Blockly.Python['pin_set_value'] = function(block) {
+    var variable_pin = Blockly.Python.variableDB_.getName(block.getFieldValue('pin'), Blockly.Variables.NAME_TYPE);
+    var value_num = Blockly.Python.valueToCode(block, 'num', Blockly.Python.ORDER_ATOMIC);
     // TODO: Assemble Python into code variable.
-    var code = pin_var+' = PIN('+pin_num+', PIN.OUT)\n';
-    // TODO: Change ORDER_NONE to the correct strength.
-    return [code, Blockly.Python.ORDER_NONE];
-};
+    var code = '';
+    if (value_num != null)
+        code = variable_pin+'.value('+value_num+')\n';
+    else
+        code = variable_pin+'.value()\n';
+    return code;
+  };

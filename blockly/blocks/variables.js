@@ -45,21 +45,49 @@ Blockly.Constants.Variables.HUE = 330;
 Blockly.Blocks.variables.HUE = Blockly.Constants.Variables.HUE;
 
 Blockly.defineBlocksWithJsonArray([  // BEGIN JSON EXTRACT
+  //bloco para declarar o pino
+  {
+    "type": "pin_declare",
+    "message0": "Pino %1 %2 %3",
+    "args0": [
+      {
+        "type": "field_dropdown",
+        "name": "type_pin",
+        "options": [
+          [
+            "OUT",
+            "OUT"
+          ],
+          [
+            "IN",
+            "IN"
+          ]
+        ]
+      },
+      {
+        "type": "input_dummy"
+      },
+      {
+        "type": "input_value",
+        "name": "num_pin",
+        "check": "Number"
+      }
+    ],
+    "inputsInline": true,
+    "output": null,
+    "colour": 60,
+    "tooltip": "",
+    "helpUrl": ""
+  },
   //Bloco para ligar o pino
   {
     "type": "pin_on",
-    "message0": "Ligar %1 %2",
+    "message0": "Ligar %1",
     "args0": [
       {
         "type": "field_variable",
         "name": "pin_var",
         "variable": "item"
-      },
-      {
-        "type": "input_value",
-        "name": "pin_num",
-        "check": "Number",
-        "align": "CENTRE"
       }
     ],
     "inputsInline": true,
@@ -72,18 +100,12 @@ Blockly.defineBlocksWithJsonArray([  // BEGIN JSON EXTRACT
   // Bloco para desligar o pino
   {
     "type": "pin_off",
-    "message0": "Desligar %1 %2",
+    "message0": "Desligar %1",
     "args0": [
       {
         "type": "field_variable",
         "name": "pin_var",
         "variable": "item"
-      },
-      {
-        "type": "input_value",
-        "name": "pin_num",
-        "check": "Number",
-        "align": "CENTRE"
       }
     ],
     "inputsInline": true,
@@ -112,13 +134,27 @@ Blockly.defineBlocksWithJsonArray([  // BEGIN JSON EXTRACT
     "helpUrl": ""
   },
 
-  //bloco para obter tempo atual
+  //Bloco para ajustar o valor do pino
   {
-    "type": "time_counter",
-    "message0": "Tempo atual (ms)",
-    "output": "Number",
-    "colour": 230,
-    "tooltip": "",
+    "type": "pin_set_value",
+    "message0": "Valor do pino %1 %2",
+    "args0": [
+      {
+        "type": "field_variable",
+        "name": "pin",
+        "variable": "item"
+      },
+      {
+        "type": "input_value",
+        "name": "num",
+        "check": "Number"
+      }
+    ],
+    "inputsInline": true,
+    "previousStatement": null,
+    "nextStatement": null,
+    "colour": 60,
+    "tooltip": "Pin.Value",
     "helpUrl": ""
   },
 
