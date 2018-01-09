@@ -22,14 +22,15 @@
     <link rel="stylesheet" href="micropyb.css">
   
     <title>MicropyB</title>
+    <link rel="icon" href="imgs/micropybLogo.png">
   </head>
 
   <body>
   
     <!-- top menu -->
 	<nav class="navbar navbar-expand-lg navbar-light bg-light">
-	  <a class="navbar-brand" href="#">Icon</a>
-		<span class="navbar-text">MicropyB</span>
+	  <a class="navbar-brand ml-4" href="#"><img src="imgs/micropyblogo2.png" /></a>
+		<span class="navbar-text"><h3>MicropyB</h3></span>
 	</nav>
 	<!-- content -->
   <div class="container-fluid">
@@ -49,7 +50,7 @@
 
     </div>
   </div>
-    <!--terminal area-->
+    <!--terminal area
     <div id="accordion" role="tablist">
       <div class="card fixed-bottom">
         <div class="card-header" role="tab" id="terminalTitle">
@@ -58,11 +59,11 @@
       
         <div id="terminal" class="collapse" role="tabpanel" aria-labelledby="headingOne" data-parent="#accordion">
           <div class="card-body">
-            <!--inserir codigo do teminal aqui-->
+            <!--inserir codigo do teminal aqui
           </div>
         </div>
       </div>
-    </div>
+    </div>-->
   
 	
 	<!-- toolbox -->
@@ -92,9 +93,14 @@
       </block>
       <block type="controls_whileUntil">
         <field name="MODE">WHILE</field>
+        <statement name="DO">
+          <block type="controls_flow_statements">
+            <field name="FLOW">BREAK</field>
+          </block>
+        </statement>
       </block>
       <block type="controls_for">
-        <field name="VAR" id="QKvSvyxcjcE4y@_]RVbh" variabletype="">i</field>
+        <field name="VAR" id="VhnMpz3)27:~-p0E2SL!" variabletype="">i</field>
         <value name="FROM">
           <shadow type="math_number">
             <field name="NUM">1</field>
@@ -112,10 +118,7 @@
         </value>
       </block>
       <block type="controls_forEach">
-        <field name="VAR" id="^@5r^%QM~yl?J[6+gA89" variabletype="">j</field>
-      </block>
-      <block type="controls_flow_statements" disabled="true">
-        <field name="FLOW">BREAK</field>
+        <field name="VAR" id="O*Nsh9ivGEc-}LyuVTP%" variabletype="">j</field>
       </block>
     </category>
     <category name="Matematicos" colour="#5ba5a5">
@@ -169,15 +172,20 @@
     </category>
     <category name="Pino" colour="#a5a55b">
       <block type="pin_on">
-        <field name="pin_var" id="leTR,0}`@47oer`~C]zW" variabletype="">item</field>
+        <field name="pin_var" id="gY9J0V7qZgnQ^^mLucl-" variabletype="">item</field>
       </block>
       <block type="pin_off">
-        <field name="pin_var" id="leTR,0}`@47oer`~C]zW" variabletype="">item</field>
+        <field name="pin_var" id="gY9J0V7qZgnQ^^mLucl-" variabletype="">item</field>
+      </block>
+      <block type="pin_declare">
+        <field name="type_pin">OUT</field>
+      </block>
+      <block type="pin_set_value">
+        <field name="pin" id="gY9J0V7qZgnQ^^mLucl-" variabletype="">item</field>
       </block>
     </category>
     <category name="Tempo" colour="#6d5ba5">
       <block type="time_sleep"></block>
-      <block type="time_counter"></block>
     </category>
     <category name="Variáveis" colour="#A65C81" custom="VARIABLE"></category>
   </xml>

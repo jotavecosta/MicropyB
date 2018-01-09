@@ -6,7 +6,11 @@ body {
 }
 
 .navbar{
-    background-color: #9670af !important
+    background-color: #9670af !important;
+}
+
+h3{
+    color: white
 }
 
 #blocklyArea{
@@ -21,6 +25,11 @@ body {
 .btn{
     background-color: #784898;
     color: white
+}
+
+img{
+    height: 65px;
+    width: 65px;
 }
 
 #terminalTitle{
