@@ -81,10 +81,14 @@ Blockly.Python['pin_off'] = function(block) {
     var variable_pin = Blockly.Python.variableDB_.getName(block.getFieldValue('pin'), Blockly.Variables.NAME_TYPE);
     var value_num = Blockly.Python.valueToCode(block, 'num', Blockly.Python.ORDER_ATOMIC);
     // TODO: Assemble Python into code variable.
-    var code = '';
-    if (value_num != null)
-        code = variable_pin+'.value('+value_num+')\n';
-    else
-        code = variable_pin+'.value()\n';
+    var code = variable_pin+'.value('+value_num+')\n';
     return code;
+  };
+
+  Blockly.Python['pin_get_value'] = function(block) {
+    var variable_pin = Blockly.Python.variableDB_.getName(block.getFieldValue('pin'), Blockly.Variables.NAME_TYPE);
+    // TODO: Assemble Python into code variable.
+    var code = ''+variable_pin+'.value()';
+    // TODO: Change ORDER_NONE to the correct strength.
+    return [code, Blockly.Python.ORDER_NONE];
   };

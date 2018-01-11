@@ -133,6 +133,22 @@ Blockly.defineBlocksWithJsonArray([  // BEGIN JSON EXTRACT
     "tooltip": "",
     "helpUrl": ""
   },
+  //Bloco para obter valor no pino
+  {
+    "type": "pin_get_value",
+    "message0": "Obter valor no pino %1",
+    "args0": [
+      {
+        "type": "field_variable",
+        "name": "pin",
+        "variable": "item"
+      }
+    ],
+    "output": null,
+    "colour": 60,
+    "tooltip": "",
+    "helpUrl": ""
+  },
 
   //Bloco para ajustar o valor do pino
   {
