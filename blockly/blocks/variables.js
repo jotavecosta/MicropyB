@@ -133,6 +133,176 @@ Blockly.defineBlocksWithJsonArray([  // BEGIN JSON EXTRACT
     "tooltip": "",
     "helpUrl": ""
   },
+
+  //Bloco de declaração de um PWM
+  {
+    "type": "pwm_declaration",
+    "message0": "pino para PWM %1",
+    "args0": [
+      {
+        "type": "field_variable",
+        "name": "NAME",
+        "variable": "item"
+      }
+    ],
+    "output": null,
+    "colour": 90,
+    "tooltip": "",
+    "helpUrl": ""
+  },
+
+  //Bloco para duty do pwm
+  {
+    "type": "pwm_duty",
+    "message0": "Taxa do pwm %1 = %2",
+    "args0": [
+      {
+        "type": "field_variable",
+        "name": "NAME",
+        "variable": "item"
+      },
+      {
+        "type": "input_value",
+        "name": "NAME",
+        "check": "Number"
+      }
+    ],
+    "previousStatement": null,
+    "nextStatement": null,
+    "colour": 90,
+    "tooltip": "",
+    "helpUrl": ""
+  },
+
+  //bloco para medir
+  {
+    "type": "dht_medir",
+    "message0": "medir dados em %1",
+    "args0": [
+      {
+        "type": "field_variable",
+        "name": "NAME",
+        "variable": "item"
+      }
+    ],
+    "previousStatement": null,
+    "nextStatement": null,
+    "colour": 150,
+    "tooltip": "",
+    "helpUrl": ""
+  },
+
+  //Bloco para declaração do dht
+  {
+    "type": "dht_declaration",
+    "message0": "DHT %1 no pino %2",
+    "args0": [
+      {
+        "type": "field_dropdown",
+        "name": "type",
+        "options": [
+          [
+            "11",
+            "11"
+          ],
+          [
+            "22",
+            "22"
+          ]
+        ]
+      },
+      {
+        "type": "field_variable",
+        "name": "NAME",
+        "variable": "item"
+      }
+    ],
+    "output": null,
+    "colour": 150,
+    "tooltip": "",
+    "helpUrl": ""
+  },
+
+  //Bloco para medir temperatura
+  {
+    "type": "dht_temp",
+    "message0": "Temperatura obtida por %1",
+    "args0": [
+      {
+        "type": "field_variable",
+        "name": "NAME",
+        "variable": "item"
+      }
+    ],
+    "output": null,
+    "colour": 150,
+    "tooltip": "",
+    "helpUrl": ""
+  },
+
+  //bloco para exibição de strings
+  {
+    "type": "print",
+    "message0": "Imprimir %1 %2",
+    "args0": [
+      {
+        "type": "field_input",
+        "name": "NAME",
+        "text": "texto"
+      },
+      {
+        "type": "input_value",
+        "name": "NAME"
+      }
+    ],
+    "previousStatement": null,
+    "nextStatement": null,
+    "colour": 0,
+    "tooltip": "",
+    "helpUrl": ""
+  },
+
+  //bloco para medir umidade
+  {
+    "type": "dht_umidade",
+    "message0": "Umidade obtida por %1",
+    "args0": [
+      {
+        "type": "field_variable",
+        "name": "NAME",
+        "variable": "item"
+      }
+    ],
+    "output": null,
+    "colour": 150,
+    "tooltip": "",
+    "helpUrl": ""
+  },
+
+
+  //Bloco para frequencia do pwm
+  {
+    "type": "pwm_freq",
+    "message0": "Frequência do PWM %1 = %2",
+    "args0": [
+      {
+        "type": "field_variable",
+        "name": "NAME",
+        "variable": "item"
+      },
+      {
+        "type": "input_value",
+        "name": "NAME",
+        "check": "Number"
+      }
+    ],
+    "previousStatement": null,
+    "nextStatement": null,
+    "colour": 90,
+    "tooltip": "",
+    "helpUrl": ""
+  },
+
   //Bloco para obter valor no pino
   {
     "type": "pin_get_value",

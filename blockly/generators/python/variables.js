@@ -92,3 +92,71 @@ Blockly.Python['pin_off'] = function(block) {
     // TODO: Change ORDER_NONE to the correct strength.
     return [code, Blockly.Python.ORDER_NONE];
   };
+
+  Blockly.Python['pwm_declaration'] = function(block) {
+    var variable_name = Blockly.Python.variableDB_.getName(block.getFieldValue('NAME'), Blockly.Variables.NAME_TYPE);
+    // TODO: Assemble Python into code variable.
+    var code = ' machine.PWM('+variable_name+')';
+    // TODO: Change ORDER_NONE to the correct strength.
+    return [code, Blockly.Python.ORDER_NONE];
+  };
+
+  Blockly.Python['pwm_freq'] = function(block) {
+    var variable_name = Blockly.Python.variableDB_.getName(block.getFieldValue('NAME'), Blockly.Variables.NAME_TYPE);
+    var value_name = Blockly.Python.valueToCode(block, 'NAME', Blockly.Python.ORDER_ATOMIC);
+    // TODO: Assemble Python into code variable.
+    var code = variable_name+'.freq('+value_name+')\n';
+    return code;
+  };
+
+  Blockly.Python['pwm_duty'] = function(block) {
+    var variable_name = Blockly.Python.variableDB_.getName(block.getFieldValue('NAME'), Blockly.Variables.NAME_TYPE);
+    var value_name = Blockly.Python.valueToCode(block, 'NAME', Blockly.Python.ORDER_ATOMIC);
+    // TODO: Assemble Python into code variable.
+    var code = variable_name+'.duty('+value_name+')\n';
+    return code;
+  };
+
+  Blockly.Python['dht_declaration'] = function(block) {
+    var dropdown_type = block.getFieldValue('type');
+    var variable_name = Blockly.Python.variableDB_.getName(block.getFieldValue('NAME'), Blockly.Variables.NAME_TYPE);
+    // TODO: Assemble Python into code variable.
+    Blockly.Python.definitions_['from_machine_import_dht'] = 'from machine import dht';
+    var code = 'dht.DHT'+dropdown_type+'('+variable_name+')';
+    // TODO: Change ORDER_NONE to the correct strength.
+    return [code, Blockly.Python.ORDER_NONE];
+  };
+
+  Blockly.Python['dht_temp'] = function(block) {
+    var variable_name = Blockly.Python.variableDB_.getName(block.getFieldValue('NAME'), Blockly.Variables.NAME_TYPE);
+    // TODO: Assemble Python into code variable.
+    var code = variable_name+'.temperature()';
+    // TODO: Change ORDER_NONE to the correct strength.
+    return [code, Blockly.Python.ORDER_NONE];
+  };
+
+  Blockly.Python['dht_umidade'] = function(block) {
+    var variable_name = Blockly.Python.variableDB_.getName(block.getFieldValue('NAME'), Blockly.Variables.NAME_TYPE);
+    // TODO: Assemble Python into code variable.
+    var code = variable_name+'.humidity()';
+    // TODO: Change ORDER_NONE to the correct strength.
+    return [code, Blockly.Python.ORDER_NONE];
+  };
+
+  Blockly.Python['print'] = function(block) {
+    var text_name = block.getFieldValue('NAME');
+    var value_name = Blockly.Python.valueToCode(block, 'NAME', Blockly.Python.ORDER_ATOMIC);
+    // TODO: Assemble Python into code variable.
+    if(value_name !=  null)
+      var code = 'print(\''+text_name+'\'+'+value_name+')\n';
+    else
+      var code = 'print(\''+text_name+'\')\n';
+    return code;
+  };
+
+  Blockly.Python['dht_medir'] = function(block) {
+    var variable_name = Blockly.Python.variableDB_.getName(block.getFieldValue('NAME'), Blockly.Variables.NAME_TYPE);
+    // TODO: Assemble Python into code variable.
+    var code = variable_name+'.measure()\n';
+    return code;
+  };
