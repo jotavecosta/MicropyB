@@ -68,7 +68,7 @@
 	
 	<!-- toolbox -->
   <xml xmlns="http://www.w3.org/1999/xhtml" id="toolbox" style="display: none;">
-    <category name="Lógicos" colour="#5b5ba5">
+    <category name="Lógicos" colour="#5C81A6">
       <block type="controls_if"></block>
       <block type="logic_compare">
         <field name="OP">EQ</field>
@@ -83,7 +83,7 @@
       <block type="logic_null"></block>
       <block type="logic_ternary"></block>
     </category>
-    <category name="Laços" colour="#5ba55b">
+    <category name="Laços" colour="#5CA65C">
       <block type="controls_repeat_ext">
         <value name="TIMES">
           <shadow type="math_number">
@@ -99,44 +99,18 @@
           </block>
         </statement>
       </block>
-      <block type="controls_for">
-        <field name="VAR" id="wlByN?OYD-|+k18#lxi$" variabletype="">i</field>
-        <value name="FROM">
-          <shadow type="math_number">
-            <field name="NUM">1</field>
-          </shadow>
-        </value>
-        <value name="TO">
-          <shadow type="math_number">
-            <field name="NUM">10</field>
-          </shadow>
-        </value>
-        <value name="BY">
-          <shadow type="math_number">
-            <field name="NUM">1</field>
-          </shadow>
-        </value>
-      </block>
-      <block type="controls_forEach">
-        <field name="VAR" id="}Ko8ve2sd3+gDkJMYA^I" variabletype="">j</field>
-      </block>
     </category>
-    <category name="Matematicos" colour="#5ba5a5">
+    <category name="Matemáticos" colour="#5C68A6">
+      <block type="math_round">
+        <field name="OP">ROUND</field>
+        <value name="NUM">
+          <shadow type="math_number">
+            <field name="NUM">3.1</field>
+          </shadow>
+        </value>
+      </block>
       <block type="math_number">
         <field name="NUM">0</field>
-      </block>
-      <block type="math_arithmetic">
-        <field name="OP">ADD</field>
-        <value name="A">
-          <shadow type="math_number">
-            <field name="NUM">1</field>
-          </shadow>
-        </value>
-        <value name="B">
-          <shadow type="math_number">
-            <field name="NUM">1</field>
-          </shadow>
-        </value>
       </block>
       <block type="math_single">
         <field name="OP">ROOT</field>
@@ -157,6 +131,40 @@
       <block type="math_constant">
         <field name="CONSTANT">PI</field>
       </block>
+      <block type="math_number_property">
+        <mutation divisor_input="false"></mutation>
+        <field name="PROPERTY">EVEN</field>
+        <value name="NUMBER_TO_CHECK">
+          <shadow type="math_number">
+            <field name="NUM">0</field>
+          </shadow>
+        </value>
+      </block>
+      <block type="math_arithmetic">
+        <field name="OP">ADD</field>
+        <value name="A">
+          <shadow type="math_number">
+            <field name="NUM">1</field>
+          </shadow>
+        </value>
+        <value name="B">
+          <shadow type="math_number">
+            <field name="NUM">1</field>
+          </shadow>
+        </value>
+      </block>
+      <block type="math_modulo">
+        <value name="DIVIDEND">
+          <shadow type="math_number">
+            <field name="NUM">64</field>
+          </shadow>
+        </value>
+        <value name="DIVISOR">
+          <shadow type="math_number">
+            <field name="NUM">10</field>
+          </shadow>
+        </value>
+      </block>
       <block type="math_random_int">
         <value name="FROM">
           <shadow type="math_number">
@@ -169,61 +177,58 @@
           </shadow>
         </value>
       </block>
+      <block type="math_random_float"></block>
     </category>
+    <category name="Variáveis" colour="#A65C81" custom="VARIABLE"></category>
+    <category name="Funções" colour="#9A5CA6" custom="PROCEDURE"></category>
     <category name="Pino" colour="#a5a55b">
-      <block type="pin_on">
-        <field name="pin_var" id=";xvI/[G_,j^?MbQ.dvQS" variabletype="">item</field>
-      </block>
-      <block type="pin_off">
-        <field name="pin_var" id=";xvI/[G_,j^?MbQ.dvQS" variabletype="">item</field>
-      </block>
       <block type="pin_declare">
         <field name="type_pin">OUT</field>
       </block>
+      <block type="pin_on">
+        <field name="pin_var" id="VU|iA}$r0XefNyBLeBgl" variabletype="">item</field>
+      </block>
+      <block type="pin_off">
+        <field name="pin_var" id="VU|iA}$r0XefNyBLeBgl" variabletype="">item</field>
+      </block>
       <block type="pin_set_value">
-        <field name="pin" id=";xvI/[G_,j^?MbQ.dvQS" variabletype="">item</field>
+        <field name="pin" id="VU|iA}$r0XefNyBLeBgl" variabletype="">item</field>
       </block>
       <block type="pin_get_value">
-        <field name="pin" id=";xvI/[G_,j^?MbQ.dvQS" variabletype="">item</field>
+        <field name="pin" id="VU|iA}$r0XefNyBLeBgl" variabletype="">item</field>
       </block>
     </category>
     <category name="PWM" colour="#80a55b">
-      <block type="pwm_declaration">
-        <field name="NAME" id="=TjJfZpC|+rD=|rH!Y/X" variabletype="">item</field>
-      </block>
       <block type="pwm_freq">
-        <field name="NAME" id="=TjJfZpC|+rD=|rH!Y/X" variabletype="">item</field>
+        <field name="NAME" id="v+45qGGrt}a05X=O2P8l" variabletype="">item</field>
       </block>
       <block type="pwm_duty">
-        <field name="NAME" id="=TjJfZpC|+rD=|rH!Y/X" variabletype="">item</field>
+        <field name="NAME" id="v+45qGGrt}a05X=O2P8l" variabletype="">item</field>
       </block>
     </category>
-    <category name="DHT" colour="#5ba56d">
-      <block type="dht_declaration">
-        <field name="type">11</field>
-        <field name="NAME" id="76s6}ssYaWA*s*:qUcdH" variabletype="">item</field>
-      </block>
+    <category name="DHT" colour="#5ba580">
       <block type="dht_medir">
-        <field name="NAME" id="76s6}ssYaWA*s*:qUcdH" variabletype="">item</field>
-      </block>
-      <block type="dht_temp">
-        <field name="NAME" id="76s6}ssYaWA*s*:qUcdH" variabletype="">item</field>
+        <field name="NAME" id="8wja!3Jna/a[Oc/#7o(l" variabletype="">item</field>
       </block>
       <block type="dht_umidade">
-        <field name="NAME" id="76s6}ssYaWA*s*:qUcdH" variabletype="">item</field>
+        <field name="NAME" id="8wja!3Jna/a[Oc/#7o(l" variabletype="">item</field>
+      </block>
+      <block type="dht_temp">
+        <field name="NAME" id="8wja!3Jna/a[Oc/#7o(l" variabletype="">item</field>
       </block>
     </category>
-    <category name="Tempo" colour="#6d5ba5">
+    <category name="Tempo" colour="#5b6da5">
       <block type="time_sleep"></block>
-    </category>
-    <category name="Variáveis" colour="#A65C81" custom="VARIABLE"></category>
-    <category name="Entrada/Saída" colour="#a55b6d">
-      <block type="print">
-        <field name="NAME">texto</field>
-      </block>
     </category>
   </xml>
   
+  <!-- workspace blocks -->
+  <xml xmlns="http://www.w3.org/1999/xhtml" id="workspaceBlocks" style="display:none">
+    <variables></variables>
+    <block type="main_func" id="Ny-nka=1D2_*jEtme:S+" x="38" y="38"></block>
+  </xml>
+
+
   <!-- Injecao dos blocos na area da div -->
 	<script> 
       var blocklyArea = document.getElementById('blocklyArea');
@@ -235,7 +240,11 @@
 				   length:3,
 			     colour: '#ccc', 
 				   snap: true},
-				   trashcan: true});
+           trashcan: true});
+      //inject the workspace blocks
+      var workspaceBlocks = document.getElementById("workspaceBlocks");
+      Blockly.Xml.domToWorkspace(workspaceBlocks, workspacePlayground);      
+      
       var onresize = function(e) {
         // Compute the absolute coordinates and dimensions of blocklyArea.
         var element = blocklyArea;

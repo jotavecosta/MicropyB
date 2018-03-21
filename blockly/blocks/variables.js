@@ -45,6 +45,24 @@ Blockly.Constants.Variables.HUE = 330;
 Blockly.Blocks.variables.HUE = Blockly.Constants.Variables.HUE;
 
 Blockly.defineBlocksWithJsonArray([  // BEGIN JSON EXTRACT
+  //Main function
+  {
+    "type": "main_func",
+    "message0": "Função Principal %1 %2",
+    "args0": [
+      {
+        "type": "input_dummy"
+      },
+      {
+        "type": "input_statement",
+        "name": "name"
+      }
+    ],
+    "colour": 330,
+    "tooltip": "O código começará a ser executado por esta função",
+    "helpUrl": ""
+  },
+  
   //bloco para declarar o pino
   {
     "type": "pin_declare",
@@ -61,6 +79,14 @@ Blockly.defineBlocksWithJsonArray([  // BEGIN JSON EXTRACT
           [
             "IN",
             "IN"
+          ],
+          [
+            "DHT",
+            "DHT"
+          ],
+          [
+            "PWM",
+            "PWM"
           ]
         ]
       },
@@ -134,23 +160,6 @@ Blockly.defineBlocksWithJsonArray([  // BEGIN JSON EXTRACT
     "helpUrl": ""
   },
 
-  //Bloco de declaração de um PWM
-  {
-    "type": "pwm_declaration",
-    "message0": "pino para PWM %1",
-    "args0": [
-      {
-        "type": "field_variable",
-        "name": "NAME",
-        "variable": "item"
-      }
-    ],
-    "output": null,
-    "colour": 90,
-    "tooltip": "",
-    "helpUrl": ""
-  },
-
   //Bloco para duty do pwm
   {
     "type": "pwm_duty",
@@ -187,37 +196,6 @@ Blockly.defineBlocksWithJsonArray([  // BEGIN JSON EXTRACT
     ],
     "previousStatement": null,
     "nextStatement": null,
-    "colour": 150,
-    "tooltip": "",
-    "helpUrl": ""
-  },
-
-  //Bloco para declaração do dht
-  {
-    "type": "dht_declaration",
-    "message0": "DHT %1 no pino %2",
-    "args0": [
-      {
-        "type": "field_dropdown",
-        "name": "type",
-        "options": [
-          [
-            "11",
-            "11"
-          ],
-          [
-            "22",
-            "22"
-          ]
-        ]
-      },
-      {
-        "type": "field_variable",
-        "name": "NAME",
-        "variable": "item"
-      }
-    ],
-    "output": null,
     "colour": 150,
     "tooltip": "",
     "helpUrl": ""
