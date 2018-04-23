@@ -66,7 +66,7 @@
       
         <div id="terminal" class="collapse" role="tabpanel" aria-labelledby="headingOne" data-parent="#accordion">
           <div class="card-body">
-            <!--inserir codigo do teminal aqui
+            inserir codigo do teminal aqui
           </div>
         </div>
       </div>
@@ -280,8 +280,10 @@
       workspacePlayground.addChangeListener(myUpdateFunction);
 
       function saveSketch(){
-        var blocksxml = Blockly.Python.workspaceBlocks;
+        var code = Blockly.Python.workspaceToCode(workspacePlayground);
         //do something
+        uriContent = "data:application/octet-stream," + encodeURIComponent(code);
+        newWindow = window.open(uriContent, 'translatedCode');
       }
   </script>
   </body>
