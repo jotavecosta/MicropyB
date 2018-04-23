@@ -281,5 +281,34 @@ Blockly.defineBlocksWithJsonArray([  // BEGIN JSON EXTRACT
     "colour": 60,
     "tooltip": "Pin.Value",
     "helpUrl": ""
+  },
+
+  //Bloco para criar servidor
+  {
+    "type": "server",
+    "message0": "Criar servidor em %1 IP %2 Porta %3",
+    "args0": [
+      {
+        "type": "input_dummy"
+      },
+      {
+        "type": "input_value",
+        "name": "IP",
+        "check": "String",
+        "align": "RIGHT"
+      },
+      {
+        "type": "input_value",
+        "name": "PORTA",
+        "check": "String",
+        "align": "RIGHT"
+      }
+    ],
+    "inputsInline": true,
+    "previousStatement": null,
+    "nextStatement": null,
+    "colour": 315,
+    "tooltip": "",
+    "helpUrl": ""
   }
 ]);
