@@ -116,7 +116,7 @@ Blockly.defineBlocksWithJsonArray([  // BEGIN JSON EXTRACT
     ],
     "previousStatement": null,
     "nextStatement": null,
-    "colour": 230,
+    "colour": 0,
     "tooltip": "",
     "helpUrl": ""
   },
@@ -179,27 +179,6 @@ Blockly.defineBlocksWithJsonArray([  // BEGIN JSON EXTRACT
     "helpUrl": ""
   },
 
-  //bloco para exibição de strings
-  {
-    "type": "print",
-    "message0": "Imprimir %1 %2",
-    "args0": [
-      {
-        "type": "field_input",
-        "name": "NAME",
-        "text": "texto"
-      },
-      {
-        "type": "input_value",
-        "name": "NAME"
-      }
-    ],
-    "previousStatement": null,
-    "nextStatement": null,
-    "colour": 0,
-    "tooltip": "",
-    "helpUrl": ""
-  },
 
   //bloco para medir umidade
   {
@@ -283,30 +262,172 @@ Blockly.defineBlocksWithJsonArray([  // BEGIN JSON EXTRACT
     "helpUrl": ""
   },
 
-  //Bloco para criar servidor
+  //Bloco readline
   {
-    "type": "server",
-    "message0": "Criar servidor em %1 IP %2 Porta %3",
+    "type": "readline",
+    "message0": "Ler linha de %1",
     "args0": [
       {
-        "type": "input_dummy"
+        "type": "input_value",
+        "name": "file"
+      }
+    ],
+    "output": null,
+    "colour": 165,
+    "tooltip": "",
+    "helpUrl": ""
+  },
+
+  //Bloco de criação de servidor
+  {
+    "type": "server",
+    "message0": "Criar servidor em %1 Endereço %2 Porta %3 Debug %4 %5 Enquanto %6 Faça %7",
+    "args0": [
+      {
+        "type": "input_dummy",
+        "align": "RIGHT"
       },
       {
         "type": "input_value",
-        "name": "IP",
+        "name": "ADDR",
         "check": "String",
         "align": "RIGHT"
       },
       {
         "type": "input_value",
         "name": "PORTA",
-        "check": "String",
+        "check": "Number",
         "align": "RIGHT"
+      },
+      {
+        "type": "field_checkbox",
+        "name": "debug",
+        "checked": true
+      },
+      {
+        "type": "input_dummy",
+        "align": "RIGHT"
+      },
+      {
+        "type": "input_value",
+        "name": "condition",
+        "check": "Boolean",
+        "align": "RIGHT"
+      },
+      {
+        "type": "input_statement",
+        "name": "LOOP",
+        "align": "RIGHT"
+      }
+    ],
+    "inputsInline": false,
+    "colour": 315,
+    "tooltip": "",
+    "helpUrl": ""
+  },
+
+  //Aceitar conexão
+  {
+    "type": "socket_accept",
+    "message0": "Aceitar conexão",
+    "output": null,
+    "colour": 315,
+    "tooltip": "",
+    "helpUrl": ""
+  },
+
+  //makefile
+  {
+    "type": "makefile",
+    "message0": "Criar arquivo a partir de %1",
+    "args0": [
+      {
+        "type": "input_value",
+        "name": "conexao"
+      }
+    ],
+    "output": null,
+    "colour": 0,
+    "tooltip": "",
+    "helpUrl": ""
+  },
+
+  //enviar dados
+  {
+    "type": "send_data",
+    "message0": "Enviar dados de %1 para %2",
+    "args0": [
+      {
+        "type": "input_value",
+        "name": "conexao"
+      },
+      {
+        "type": "input_value",
+        "name": "buffer"
       }
     ],
     "inputsInline": true,
     "previousStatement": null,
     "nextStatement": null,
+    "colour": 315,
+    "tooltip": "",
+    "helpUrl": ""
+  },
+
+  //Encerrar sessão
+  {
+    "type": "close_conection",
+    "message0": "Encerrar conexão em %1",
+    "args0": [
+      {
+        "type": "input_value",
+        "name": "conexao"
+      }
+    ],
+    "previousStatement": null,
+    "nextStatement": null,
+    "colour": 315,
+    "tooltip": "",
+    "helpUrl": ""
+  },
+
+  //conectar a wifi
+  {
+    "type": "wifi",
+    "lastDummyAlign0": "RIGHT",
+    "message0": "Conectar a rede WIFI %1 SSID %2 Senha %3 Modo %4",
+    "args0": [
+      {
+        "type": "input_dummy"
+      },
+      {
+        "type": "input_value",
+        "name": "name",
+        "check": "String",
+        "align": "RIGHT"
+      },
+      {
+        "type": "input_value",
+        "name": "password",
+        "check": "String",
+        "align": "RIGHT"
+      },
+      {
+        "type": "field_dropdown",
+        "name": "wifimod",
+        "options": [
+          [
+            "Estação",
+            "station"
+          ],
+          [
+            "Ponto de Acesso",
+            "acesspoint"
+          ]
+        ]
+      }
+    ],
+    "inputsInline": false,
     "colour": 315,
     "tooltip": "",
     "helpUrl": ""

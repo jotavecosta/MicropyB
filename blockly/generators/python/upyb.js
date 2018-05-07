@@ -4,13 +4,6 @@ goog.provide('Blockly.Python.upyb');
 
 goog.require('Blockly.Python');
 
-Blockly.Python['server'] = function(block) {
-  var value_ip = Blockly.Python.valueToCode(block, 'IP', Blockly.Python.ORDER_ATOMIC);
-  var value_porta = Blockly.Python.valueToCode(block, 'PORTA', Blockly.Python.ORDER_ATOMIC);
-  // TODO: Assemble Python into code variable.
-  var code = '...\n';
-  return code;
-};
 
 Blockly.Python['main_func'] = function(block) {
     var statements_name = Blockly.Python.statementToCode(block, 'name');
@@ -121,5 +114,84 @@ Blockly.Python['main_func'] = function(block) {
     var variable_name = Blockly.Python.variableDB_.getName(block.getFieldValue('NAME'), Blockly.Variables.NAME_TYPE);
     
     var code = variable_name+'.measure()\n';
+    return code;
+  };
+
+  Blockly.Python['readline'] = function(block) {
+    var value_file = Blockly.Python.valueToCode(block, 'file', Blockly.Python.ORDER_ATOMIC);
+    // TODO: Assemble Python into code variable.
+    var code = value_file+'.readline()';
+    // TODO: Change ORDER_NONE to the correct strength.
+    return [code, Blockly.Python.ORDER_NONE];
+  };
+
+  Blockly.Python['server'] = function(block) {
+    var value_addr = Blockly.Python.valueToCode(block, 'ADDR', Blockly.Python.ORDER_ATOMIC);
+    var value_porta = Blockly.Python.valueToCode(block, 'PORTA', Blockly.Python.ORDER_ATOMIC);
+    var checkbox_debug = block.getFieldValue('debug') == 'TRUE';
+    var value_condition = Blockly.Python.valueToCode(block, 'condition', Blockly.Python.ORDER_ATOMIC);
+    var statements_loop = Blockly.Python.statementToCode(block, 'LOOP');
+
+    Blockly.Python.definitions_['import_socket'] = 'import socket';
+
+    var code = 'def servidor():\n'+
+               '  addr = socket.getaddrinfo(\''+value_addr+'\', '+ value_porta+')[0][-1]\n'+
+               '  s = socket.socket()\n'+
+               '  s.bind(addr)\n'+
+               '  s.listen(1)\n';
+    if(checkbox_debug)
+      code +=  '  print(\'Escutando em: \', addr)\n';
+     
+    code +=    '  while '+value_condition+':\n  ';
+
+    var newString = statements_loop.replace(/\n/g, '\n  ');
+    code += newString;
+
+    return code;
+  };
+
+  Blockly.Python['socket_accept'] = function(block) {
+    
+    var code = 's.accept()';
+    // TODO: Change ORDER_NONE to the correct strength.
+    return [code, Blockly.Python.ORDER_NONE];
+  };
+
+  Blockly.Python['makefile'] = function(block) {
+    var value_conexao = Blockly.Python.valueToCode(block, 'conexao', Blockly.Python.ORDER_ATOMIC);
+    // TODO: Assemble Python into code variable.
+    var code = value_conexao+'.makefile(\'rwb\', 0)';
+    // TODO: Change ORDER_NONE to the correct strength.
+    return [code, Blockly.Python.ORDER_NONE];
+  };
+
+  Blockly.Python['send_data'] = function(block) {
+    var value_conexao = Blockly.Python.valueToCode(block, 'conexao', Blockly.Python.ORDER_ATOMIC);
+    var value_buffer = Blockly.Python.valueToCode(block, 'buffer', Blockly.Python.ORDER_ATOMIC);
+    // TODO: Assemble Python into code variable.
+    var code = value_conexao+'.send('+value_buffer+')\n';
+    return code;
+  };
+
+  Blockly.Python['close_conection'] = function(block) {
+    var value_conexao = Blockly.Python.valueToCode(block, 'conexao', Blockly.Python.ORDER_ATOMIC);
+    // TODO: Assemble Python into code variable.
+    var code = value_conexao+'.close()\n';
+    return code;
+  };
+
+  Blockly.Python['wifi'] = function(block) {
+    var value_name = Blockly.Python.valueToCode(block, 'name', Blockly.Python.ORDER_ATOMIC);
+    var value_password = Blockly.Python.valueToCode(block, 'password', Blockly.Python.ORDER_ATOMIC);
+    var dropdown_wifimod = block.getFieldValue('wifimod');
+    // TODO: Assemble Python into code variable.
+    var code = 'def conectar(essid=\''+value_name+'\', password=\''+value_password+'\'):\n'+
+               '  wlan = network.WLAN(STA_IF)\n'+
+               '  wlan.active(True)\n'+
+               '  if no wlan.isconnected():\n'+
+               '    wlan.connect(essid, password)\n'+
+               '    while not wlan.isconnected():\n'+
+               '      pass\n'+
+               '  print(\'Configuração da rede: \', wlan.ifconfig())\n';
     return code;
   };
