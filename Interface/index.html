@@ -14,11 +14,11 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
     
 	  <!-- blocly js -->
-    <script src="../blockly/blockly_compressed.js"></script> <!--alterar caminho quando mudar de pasta -->
+    <script src="../blockly/blockly_compressed.js"></script>
     <!-- Language -->
-    <script src="../blockly/python_compressed.js"></script> <!-- Linguagem para teste da tradução-->
-    <script src="../blockly/blocks_compressed.js"></script> <!--alterar caminho quando mudar de pasta -->
-    <script src="../blockly/msg/js/pt-br.js"></script> <!--alterar caminho quando mudar de pasta -->
+    <script src="../blockly/python_compressed.js"></script> 
+    <script src="../blockly/blocks_compressed.js"></script>
+    <script src="../blockly/msg/js/pt-br.js"></script>
   
   	<!-- micropyb css -->
     <link rel="stylesheet" href="micropyb.css">
@@ -186,8 +186,47 @@
       </block>
       <block type="math_random_float"></block>
     </category>
+    <category name="Texto" colour="#5CA68D">
+      <block type="text_charAt">
+        <mutation at="true"></mutation>
+        <field name="WHERE">FROM_START</field>
+        <value name="VALUE">
+          <block type="variables_get">
+            <field name="VAR" id="hFFXpyk,|C:B_#^IP1aR" variabletype="">text</field>
+          </block>
+        </value>
+      </block>
+      <block type="text">
+        <field name="TEXT"></field>
+      </block>
+      <block type="text_append">
+        <field name="VAR" id="RZk|uWGAp1do)/~dL)N@" variabletype="">item</field>
+        <value name="TEXT">
+          <shadow type="text">
+            <field name="TEXT"></field>
+          </shadow>
+        </value>
+      </block>
+      <block type="text_length">
+        <value name="VALUE">
+          <shadow type="text">
+            <field name="TEXT">abc</field>
+          </shadow>
+        </value>
+      </block>
+      <block type="text_print">
+        <value name="TEXT">
+          <shadow type="text">
+            <field name="TEXT">abc</field>
+          </shadow>
+        </value>
+      </block>
+      <block type="readline"></block>
+    </category>
     <category name="Variáveis" colour="#A65C81" custom="VARIABLE"></category>
-    <category name="Funções" colour="#9A5CA6" custom="PROCEDURE"></category>
+    <category name="Funções" colour="#9A5CA6" custom="PROCEDURE">
+      <block type="main_func"></block>
+    </category>
     <category name="Pino" colour="#a5a55b">
       <block type="pin_declare">
         <field name="type_pin">OUT</field>
@@ -224,8 +263,20 @@
         <field name="NAME" id="8wja!3Jna/a[Oc/#7o(l" variabletype="">item</field>
       </block>
     </category>
-    <category name="Tempo" colour="#5b6da5">
+    <category name="Rede" colour="#a55b93">
+      <block type="server">
+        <field name="debug">TRUE</field>
+      </block>
+      <block type="wifi">
+        <field name="wifimod">station</field>
+      </block>
+      <block type="send_data"></block>
+      <block type="socket_accept"></block>
+      <block type="close_conection"></block>
+    </category>
+    <category name="Outros" colour="#a55b5b">
       <block type="time_sleep"></block>
+      <block type="makefile"></block>
     </category>
   </xml>
   
