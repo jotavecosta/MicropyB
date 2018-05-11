@@ -57,20 +57,6 @@
 
     </div>
   </div>
-    <!--terminal area
-    <div id="accordion" role="tablist">
-      <div class="card fixed-bottom">
-        <div class="card-header" role="tab" id="terminalTitle">
-          <button type="button" class="btn ml-4" data-toggle="collapse" data-target="#terminal" aria-expanded="false" aria-controls="terminal">Terminal</button>
-        </div>
-      
-        <div id="terminal" class="collapse" role="tabpanel" aria-labelledby="headingOne" data-parent="#accordion">
-          <div class="card-body">
-            inserir codigo do teminal aqui
-          </div>
-        </div>
-      </div>
-    </div>-->
   
 	
 	<!-- toolbox -->
@@ -100,11 +86,30 @@
       </block>
       <block type="controls_whileUntil">
         <field name="MODE">WHILE</field>
-        <statement name="DO">
-          <block type="controls_flow_statements">
-            <field name="FLOW">BREAK</field>
-          </block>
-        </statement>
+      </block>
+      <block type="controls_for">
+        <field name="VAR" id="1p:V8)]4e]{!]{KLl;X|" variabletype="">i</field>
+        <value name="FROM">
+          <shadow type="math_number">
+            <field name="NUM">1</field>
+          </shadow>
+        </value>
+        <value name="TO">
+          <shadow type="math_number">
+            <field name="NUM">10</field>
+          </shadow>
+        </value>
+        <value name="BY">
+          <shadow type="math_number">
+            <field name="NUM">1</field>
+          </shadow>
+        </value>
+      </block>
+      <block type="controls_forEach">
+        <field name="VAR" id="-+N@QW8V+D|ylSY4r0~(" variabletype="">j</field>
+      </block>
+      <block type="controls_flow_statements">
+        <field name="FLOW">BREAK</field>
       </block>
     </category>
     <category name="Matemáticos" colour="#5C68A6">
@@ -230,6 +235,11 @@
     <category name="Pino" colour="#a5a55b">
       <block type="pin_declare">
         <field name="type_pin">OUT</field>
+        <value name="num_pin">
+          <block type="math_number">
+            <field name="NUM">0</field>
+          </block>
+        </value>
       </block>
       <block type="pin_on">
         <field name="pin_var" id="VU|iA}$r0XefNyBLeBgl" variabletype="">item</field>
@@ -239,6 +249,11 @@
       </block>
       <block type="pin_set_value">
         <field name="pin" id="VU|iA}$r0XefNyBLeBgl" variabletype="">item</field>
+        <value name="num">
+          <block type="math_number">
+            <field name="NUM">0</field>
+          </block>
+        </value>
       </block>
       <block type="pin_get_value">
         <field name="pin" id="VU|iA}$r0XefNyBLeBgl" variabletype="">item</field>
@@ -266,9 +281,29 @@
     <category name="Rede" colour="#a55b93">
       <block type="server">
         <field name="debug">TRUE</field>
+        <value name="ADDR">
+          <block type="text">
+            <field name="TEXT"></field>
+          </block>
+        </value>
+        <value name="PORTA">
+          <block type="math_number">
+            <field name="NUM">0</field>
+          </block>
+        </value>
       </block>
       <block type="wifi">
         <field name="wifimod">station</field>
+        <value name="name">
+          <block type="text">
+            <field name="TEXT"></field>
+          </block>
+        </value>
+        <value name="password">
+          <block type="text">
+            <field name="TEXT"></field>
+          </block>
+        </value>
       </block>
       <block type="send_data"></block>
       <block type="socket_accept"></block>
