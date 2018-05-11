@@ -135,7 +135,7 @@ Blockly.Python['main_func'] = function(block) {
     Blockly.Python.definitions_['import_socket'] = 'import socket';
 
     var code = 'def servidor():\n'+
-               '  addr = socket.getaddrinfo(\''+value_addr+'\', '+ value_porta+')[0][-1]\n'+
+               '  addr = socket.getaddrinfo('+value_addr+', '+ value_porta+')[0][-1]\n'+
                '  s = socket.socket()\n'+
                '  s.bind(addr)\n'+
                '  s.listen(1)\n';
@@ -185,7 +185,7 @@ Blockly.Python['main_func'] = function(block) {
     var value_password = Blockly.Python.valueToCode(block, 'password', Blockly.Python.ORDER_ATOMIC);
     var dropdown_wifimod = block.getFieldValue('wifimod');
     // TODO: Assemble Python into code variable.
-    var code = 'def conectar(essid=\''+value_name+'\', password=\''+value_password+'\'):\n'+
+    var code = 'def conectar(essid= '+value_name+', password= '+value_password+'):\n'+
                '  wlan = network.WLAN(STA_IF)\n'+
                '  wlan.active(True)\n'+
                '  if no wlan.isconnected():\n'+
