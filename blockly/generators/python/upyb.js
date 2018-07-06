@@ -22,7 +22,7 @@ Blockly.Python['main_func'] = function(block) {
   Blockly.Python['pin_declare'] = function(block) {
     var dropdown_type_pin = block.getFieldValue('type_pin');
     var value_num_pin = Blockly.Python.valueToCode(block, 'num_pin', Blockly.Python.ORDER_ATOMIC);
-    Blockly.Python.definitions_['from_machine_import_pin'] = 'from machine import pin';
+    Blockly.Python.definitions_['from_machine_import_pin'] = 'from machine import Pin';
     var code = '';
   
     switch(dropdown_type_pin){
